@@ -1,0 +1,141 @@
+---
+const detailImg = 'https://images.unsplash.com/photo-1612544409025-e0e5fe2b3022?auto=format&fit=crop&w=1200&q=85';
+---
+
+<section id="contact" class="relative section-padding py-28 lg:py-40 bg-cream overflow-hidden">
+  <div aria-hidden class="pointer-events-none absolute -bottom-32 -left-20 font-italic-display text-[18vw] lg:text-[14rem] text-linen/70 leading-none select-none">
+    book.
+  </div>
+
+  <div class="relative grid grid-cols-12 gap-6 lg:gap-12">
+    <div class="col-span-12 lg:col-span-5">
+      <p class="eyebrow reveal mb-5">Get in Touch</p>
+      <h2 class="reveal reveal-delay-1 font-display font-light text-walnut text-[clamp(2.4rem,5.5vw,4.5rem)] leading-[1] tracking-tight balance">
+        Let's get you<br />
+        <span class="font-italic-display text-bronze">glowing.</span>
+      </h2>
+      <p class="reveal reveal-delay-2 mt-6 text-walnut/70 max-w-md leading-relaxed">
+        We are fully mobile. Send your address, date, and group size and we'll respond within 24 hours to confirm availability.
+      </p>
+
+      <dl class="reveal reveal-delay-3 mt-12 space-y-7">
+        <div>
+          <dt class="eyebrow text-bronze mb-1">Service Area</dt>
+          <dd class="font-display text-xl text-walnut">Miami · Miami Beach · Brickell · Coral Gables · Fort Lauderdale</dd>
+          <dd class="text-sm text-walnut/60 mt-1">Travel beyond 40 mi available on request.</dd>
+        </div>
+        <div>
+          <dt class="eyebrow text-bronze mb-1">Phone</dt>
+          <dd>
+            <a href="tel:+15550101024" class="font-display text-xl text-walnut hover:text-bronze transition-colors">
+              +1 (555) 010-1024
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt class="eyebrow text-bronze mb-1">Email</dt>
+          <dd>
+            <a href="mailto:hello@simplysunkissglow.com" class="font-display text-xl text-walnut hover:text-bronze transition-colors">
+              hello@simplysunkissglow.com
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt class="eyebrow text-bronze mb-1">Instagram</dt>
+          <dd>
+            <a href="https://www.instagram.com/simplysunkissglow/" target="_blank" rel="noopener" class="font-display text-xl text-walnut hover:text-bronze transition-colors">
+              @simplysunkissglow
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt class="eyebrow text-bronze mb-1">Booking Hours</dt>
+          <dd class="font-display text-walnut leading-relaxed">
+            Tue–Fri · 10am – 8pm<br />
+            Sat · 9am – 6pm<br />
+            Sun · 11am – 4pm
+          </dd>
+          <dd class="text-sm text-walnut/60 mt-2">After-hours and early-morning bookings available for events.</dd>
+        </div>
+      </dl>
+
+      <div class="reveal reveal-delay-4 mt-12 hidden lg:block overflow-hidden h-56">
+        <img src={detailImg} alt="Detail of tan kit on warm linen" width="1200" height="600" class="h-full w-full object-cover kenburns" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="col-span-12 lg:col-span-7 lg:pl-12">
+      <form
+        class="reveal bg-linen/50 border border-bronze/20 p-8 md:p-12 space-y-7"
+        name="booking"
+        method="POST"
+        action="https://formspree.io/f/xeolpkly"
+      >
+        <div class="grid md:grid-cols-2 gap-7">
+          <div>
+            <label class="eyebrow text-bronze block mb-2" for="firstName">First Name</label>
+            <input id="firstName" name="firstName" type="text" required
+              class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-display text-lg transition-colors" />
+          </div>
+          <div>
+            <label class="eyebrow text-bronze block mb-2" for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text" required
+              class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-display text-lg transition-colors" />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-7">
+          <div>
+            <label class="eyebrow text-bronze block mb-2" for="email">Email</label>
+            <input id="email" name="email" type="email" required
+              class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-display text-lg transition-colors" />
+          </div>
+          <div>
+            <label class="eyebrow text-bronze block mb-2" for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel"
+              class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-display text-lg transition-colors" />
+          </div>
+        </div>
+
+        <div>
+          <label class="eyebrow text-bronze block mb-2" for="service">Service</label>
+          <select id="service" name="service" required
+            class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-display text-lg transition-colors appearance-none">
+            <option>Signature Custom Tan — $55</option>
+            <option>Express Rapid Glow — $70</option>
+            <option>Bridal Glow Package — $95</option>
+            <option>Group / Bridal Party — from $50/pp</option>
+            <option>Not sure yet — consultation</option>
+          </select>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-7">
+          <div>
+            <label class="eyebrow text-bronze block mb-2" for="date">Preferred Date</label>
+            <input id="date" name="date" type="date"
+              class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-display text-lg transition-colors" />
+          </div>
+          <div>
+            <label class="eyebrow text-bronze block mb-2" for="location">Where We're Coming</label>
+            <input id="location" name="location" type="text" required placeholder="Address, hotel, or neighborhood"
+              class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-display text-lg placeholder:text-walnut/40 transition-colors" />
+          </div>
+        </div>
+
+        <div>
+          <label class="eyebrow text-bronze block mb-2" for="notes">Tell us anything</label>
+          <textarea id="notes" name="notes" rows="4"
+            placeholder="Skin tone, event date, group size, allergies — anything helpful"
+            class="w-full bg-transparent border-b border-walnut/30 focus:border-bronze outline-none py-3 text-walnut font-light text-base placeholder:text-walnut/40 transition-colors"></textarea>
+        </div>
+
+        <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <p class="text-xs text-walnut/55 max-w-xs">
+            We'll respond within 24 hours to confirm and walk you through prep.
+          </p>
+          <button type="submit" class="btn-primary">Send Request <span aria-hidden>→</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

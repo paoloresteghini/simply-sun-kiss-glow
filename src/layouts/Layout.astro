@@ -1,0 +1,243 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'Simply Sun Kiss Glow — Luxury Organic Spray Tans',
+  description = 'Mobile luxury spray tans — we come to you. Bespoke, vegan, custom-blended for your undertone. Bridal parties, events, and at-home appointments across Miami.',
+  image = '/images/hero.jpg',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['BeautySalon', 'MobileBusiness'],
+  '@id': 'https://simplysunkissglow.com/#business',
+  name: 'Simply Sun Kiss Glow',
+  description,
+  url: 'https://simplysunkissglow.com',
+  image,
+  logo: 'https://simplysunkissglow.com/logo.png',
+  telephone: '+1-555-010-1024',
+  email: 'hello@simplysunkissglow.com',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Miami',
+    addressRegion: 'FL',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Miami' },
+    { '@type': 'City', name: 'Miami Beach' },
+    { '@type': 'City', name: 'Coral Gables' },
+    { '@type': 'City', name: 'Brickell' },
+    { '@type': 'City', name: 'Fort Lauderdale' },
+  ],
+  serviceArea: { '@type': 'GeoCircle', geoMidpoint: { '@type': 'GeoCoordinates', latitude: 25.7907, longitude: -80.1300 }, geoRadius: 40000 },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Tuesday','Wednesday','Thursday','Friday'], opens: '10:00', closes: '20:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '11:00', closes: '16:00' },
+  ],
+  sameAs: ['https://www.instagram.com/simplysunkissglow/'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Spray Tan Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Signature Mobile Spray Tan', serviceType: 'Mobile spray tanning' }, price: '75', priceCurrency: 'USD' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Express Rapid Glow (Mobile)', serviceType: 'Mobile spray tanning' }, price: '90', priceCurrency: 'USD' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bridal Glow Package (Mobile)', serviceType: 'Mobile spray tanning' }, price: '120', priceCurrency: 'USD' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Group & Bridal Parties (Mobile)', serviceType: 'Mobile spray tanning' }, price: '65', priceCurrency: 'USD' },
+    ],
+  },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '187' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does a spray tan last?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A well-prepped, properly maintained spray tan lasts 7–10 days. Daily moisturizing and gentle cleansing can extend it further.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is the solution safe for sensitive skin?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our formulas are vegan, paraben-free, gluten-free, and naturally derived. We offer fragrance-free options for the most sensitive skin types.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How should I prepare for my appointment?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Exfoliate 24 hours before, shave or wax 24+ hours prior, arrive with clean, product-free skin, and wear loose dark clothing.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will it turn orange?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Never. Each tan is custom-blended to your undertone for a natural, sun-kissed bronze — no orange, no streaks, no patches.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this a mobile spray tan service?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes — we are 100% mobile. We bring a portable pop-up cabin, professional equipment, and the full setup directly to your home, hotel, or venue across the greater Miami area.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What do I need to provide for a mobile appointment?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Just a small private space (a bathroom or 6x6 ft area works), an outlet, and clean dry skin. We bring the rest — cabin, lighting, fan, towels, and all product.' },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#FBF7F0" />
+    <meta name="author" content="Simply Sun Kiss Glow" />
+    <meta name="keywords" content="spray tan, organic spray tan, custom airbrush tan, bridal spray tan, mobile spray tan, sunless tanning, luxury tan, vegan spray tan" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Simply Sun Kiss Glow" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30..100;1,9..144,300..700,30..100&family=Jost:wght@200;300;400;500;600&family=Petit+Formal+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body class="grain bg-cream text-walnut antialiased">
+    <slot />
+
+    <script>
+      // Scroll reveal via IntersectionObserver
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      // Parallax for [data-parallax] elements
+      const parallaxEls = document.querySelectorAll<HTMLElement>('[data-parallax]');
+      if (parallaxEls.length) {
+        let ticking = false;
+        const update = () => {
+          const y = window.scrollY;
+          parallaxEls.forEach((el) => {
+            const speed = Number(el.dataset.parallax || 0.15);
+            el.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+          });
+          ticking = false;
+        };
+        window.addEventListener('scroll', () => {
+          if (!ticking) { requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+      }
+
+      // Nav shrink on scroll
+      const nav = document.querySelector<HTMLElement>('[data-nav]');
+      if (nav) {
+        const onScroll = () => {
+          if (window.scrollY > 60) nav.classList.add('nav-scrolled');
+          else nav.classList.remove('nav-scrolled');
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      // Mobile menu
+      const burger = document.querySelector<HTMLButtonElement>('[data-burger]');
+      const menu = document.querySelector<HTMLElement>('[data-menu]');
+      burger?.addEventListener('click', () => {
+        menu?.classList.toggle('open');
+        burger.classList.toggle('open');
+      });
+      menu?.querySelectorAll('a').forEach((a) =>
+        a.addEventListener('click', () => {
+          menu.classList.remove('open');
+          burger?.classList.remove('open');
+        })
+      );
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  [data-nav] {
+    transition: padding 0.5s ease, background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.5s ease;
+  }
+  [data-nav].nav-scrolled {
+    background: rgba(251, 247, 240, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom-color: rgba(168, 131, 90, 0.18);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  [data-menu] {
+    transform: translateY(-100%);
+    transition: transform 0.6s cubic-bezier(0.7, 0, 0.2, 1);
+  }
+  [data-menu].open {
+    transform: translateY(0);
+  }
+
+  [data-burger] span {
+    transition: transform 0.4s, opacity 0.3s;
+  }
+  [data-burger].open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  [data-burger].open span:nth-child(2) {
+    opacity: 0;
+  }
+  [data-burger].open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+</style>

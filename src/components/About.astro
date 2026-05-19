@@ -1,0 +1,56 @@
+---
+const portrait = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85';
+const detail = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=85';
+---
+
+<section id="about" class="relative section-padding py-28 lg:py-40 bg-cream overflow-hidden">
+  <div class="grid grid-cols-12 gap-6 lg:gap-16 items-center">
+    <!-- Image column -->
+    <div class="col-span-12 lg:col-span-5 relative h-[460px] lg:h-[640px] reveal">
+      <div class="absolute top-0 left-0 w-[78%] h-[78%] overflow-hidden">
+        <img src={portrait} alt="Tanning artist preparing solution in serene studio" width="900" height="1200" class="h-full w-full object-cover kenburns" loading="lazy" />
+      </div>
+      <div class="absolute bottom-0 right-0 w-[55%] h-[42%] overflow-hidden border-4 border-cream shadow-xl shadow-walnut/15">
+        <img src={detail} alt="Apothecary detail of organic tanning serum" width="600" height="600" class="h-full w-full object-cover" loading="lazy" />
+      </div>
+      <!-- Vertical text -->
+      <span class="hidden lg:block absolute -left-4 top-1/2 -translate-y-1/2 -rotate-90 origin-center eyebrow text-bronze whitespace-nowrap">
+        — Mobile · Greater Miami
+      </span>
+    </div>
+
+    <!-- Text column -->
+    <div class="col-span-12 lg:col-span-7 lg:pl-10">
+      <p class="eyebrow reveal mb-6">About — Fully Mobile</p>
+      <h2 class="reveal reveal-delay-1 font-display font-light text-walnut text-[clamp(2.4rem,5.5vw,4.5rem)] leading-[1] tracking-tight balance">
+        The studio<br />
+        <span class="font-italic-display text-bronze">comes to you.</span>
+      </h2>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-x-12 gap-y-6 max-w-3xl">
+        <p class="reveal reveal-delay-2 text-walnut/75 leading-relaxed">
+          Simply Sun Kiss Glow is a 100% mobile spray tan service. No salon visits, no waiting rooms — we arrive with a pop-up cabin, professional lighting, and the full setup, then leave you with nothing but the glow.
+        </p>
+        <p class="reveal reveal-delay-3 text-walnut/75 leading-relaxed">
+          Every solution is hand-blended on-site for your undertone — vegan, naturally-derived DHA — applied in the comfort of your home, hotel suite, or event venue across the greater Miami area.
+        </p>
+      </div>
+
+      <!-- Pillars -->
+      <div class="reveal reveal-delay-4 mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-bronze/25 pt-10">
+        {[
+          { n: '01', l: 'We Travel', d: 'Home, hotel, or venue.' },
+          { n: '02', l: 'Pop-Up Cabin', d: 'Pro setup in 10 min.' },
+          { n: '03', l: 'Hand-Blended', d: 'Vegan, organic DHA.' },
+          { n: '04', l: 'Bridal & Groups', d: 'Parties our specialty.' },
+        ].map((p) => (
+          <div>
+            <div class="font-italic-display text-bronze text-xl mb-2">{p.n}</div>
+            <div class="font-display text-walnut text-lg leading-tight">{p.l}</div>
+            <div class="text-sm text-walnut/60 mt-1">{p.d}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

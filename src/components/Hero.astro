@@ -1,0 +1,136 @@
+---
+const heroImage = '/images/hero.jpg';
+const accentImage = '/images/mini-hero.png';
+---
+
+<section id="top" class="relative min-h-screen overflow-hidden bg-cream pt-32 lg:pt-40">
+  <!-- Decorative giant serif behind hero -->
+  <div
+    aria-hidden
+    class="pointer-events-none absolute -top-10 -right-10 lg:right-0 select-none font-italic-display text-[28vw] lg:text-[20rem] leading-none text-bisque/30 mix-blend-multiply"
+  >
+    glow.
+  </div>
+
+  <!-- Sun ornament -->
+  <div
+    aria-hidden
+    class="pointer-events-none absolute top-1/3 -left-32 h-[420px] w-[420px] rounded-full sun-pulse"
+    style="background: radial-gradient(circle, rgba(201,165,124,0.55) 0%, rgba(201,165,124,0) 65%);"
+  ></div>
+
+  <div class="relative section-padding grid grid-cols-12 gap-6 lg:gap-12 items-center pb-20 lg:pb-32">
+    <!-- Left: text block -->
+    <div class="col-span-12 lg:col-span-7 relative z-10">
+      <div class="reveal flex items-center gap-3 mb-8">
+        <span class="h-px w-12 bg-bronze"></span>
+        <span class="eyebrow">Mobile Spray Tan · Miami & Beyond</span>
+      </div>
+
+      <h1 class="reveal reveal-delay-1 font-display font-light text-walnut leading-[0.92] text-[clamp(3.2rem,9vw,8.5rem)] tracking-tight balance">
+        Your glow,<br />
+        <span class="font-italic-display shimmer-text">at home.</span>
+      </h1>
+
+      <p class="reveal reveal-delay-2 mt-8 max-w-xl text-lg md:text-xl text-walnut/75 font-light leading-relaxed balance">
+        Luxury mobile spray tans — we bring the studio to your door. Custom-blended, vegan, and hand-applied in the comfort of your home, hotel, or venue. Never orange, never streaky.
+      </p>
+
+      <div class="reveal reveal-delay-2 mt-5 inline-flex items-center gap-2 px-4 py-2 bg-walnut/5 border border-bronze/40 rounded-full">
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-bronze" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-7-7.5-7-13a7 7 0 1114 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span class="text-[11px] uppercase tracking-extra-wide font-medium text-walnut">We come to you · no studio visits</span>
+      </div>
+
+      <div class="reveal reveal-delay-3 mt-10 flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="btn-primary">Book Your Glow <span aria-hidden>→</span></a>
+        <a href="#services" class="btn-ghost">View Services</a>
+      </div>
+
+      <!-- Quick stats -->
+      <dl class="reveal reveal-delay-4 mt-16 grid grid-cols-3 gap-6 max-w-md border-t border-bronze/25 pt-6">
+        <div>
+          <dt class="eyebrow">Rating</dt>
+          <dd class="font-display text-2xl text-walnut mt-1">4.9<span class="text-bronze text-base">★</span></dd>
+        </div>
+        <div>
+          <dt class="eyebrow">At-home</dt>
+          <dd class="font-display text-2xl text-walnut mt-1">100%</dd>
+        </div>
+        <div>
+          <dt class="eyebrow">Vegan</dt>
+          <dd class="font-display text-2xl text-walnut mt-1">100%</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- Right: image collage -->
+    <div class="col-span-12 lg:col-span-5 relative h-[520px] lg:h-[680px]">
+      <!-- Main portrait -->
+      <div class="reveal reveal-delay-2 absolute top-0 right-0 w-[78%] h-[72%] overflow-hidden rounded-[2px] shadow-2xl shadow-walnut/20">
+        <img
+          src={heroImage}
+          alt="Simply Sun Kiss Glow mobile spray tan result — natural bronze, sun-kissed glow"
+          width="1440"
+          height="1920"
+          class="h-full w-full object-cover kenburns"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <!-- Accent secondary -->
+      <div class="reveal reveal-delay-3 absolute bottom-0 left-0 w-[55%] h-[42%] overflow-hidden rounded-[2px] border-4 border-cream shadow-xl shadow-walnut/25 float-slow">
+        <img
+          src={accentImage}
+          alt="Simply Sun Kiss Glow tan detail"
+          width="615"
+          height="748"
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Floating badge -->
+      <div class="reveal reveal-delay-4 absolute -top-4 left-0 lg:-left-10 bg-cream border border-bronze/30 rounded-full px-5 py-3 shadow-lg shadow-walnut/10 flex items-center gap-3">
+        <span class="inline-block h-2 w-2 rounded-full bg-bronze animate-pulse"></span>
+        <span class="font-display text-sm text-walnut">Mobile · we come to you</span>
+      </div>
+
+      <!-- Script ornament -->
+      <div class="absolute -bottom-6 right-6 font-script text-3xl text-bronze/80 rotate-[-6deg] reveal reveal-delay-5">
+        keep your glow ♡
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 group">
+    <span class="eyebrow text-walnut/50 group-hover:text-walnut transition-colors">scroll</span>
+    <span class="block h-12 w-px bg-gradient-to-b from-walnut/40 to-transparent overflow-hidden">
+      <span class="block h-4 w-px bg-walnut animate-[scrollcue_2s_ease-in-out_infinite]"></span>
+    </span>
+  </a>
+
+  <style>
+    @keyframes scrollcue {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(300%); }
+    }
+  </style>
+</section>
+
+<!-- Marquee strip -->
+<div class="relative bg-walnut text-cream py-5 overflow-hidden border-y border-bronze/40">
+  <div class="flex marquee-track whitespace-nowrap">
+    {Array.from({ length: 2 }).map(() => (
+      <div class="flex items-center gap-12 px-6 shrink-0">
+        {['We Come To You', 'Mobile Spray Tans', 'Custom Blended', 'Vegan & Cruelty-Free', 'Bridal & Group Bookings', 'Hotels · Homes · Venues', 'Naturally Derived DHA', 'No Streaks · No Orange'].map((t) => (
+          <span class="flex items-center gap-12 shrink-0">
+            <span class="font-italic-display text-xl text-bisque">{t}</span>
+            <span class="text-bronze">✦</span>
+          </span>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>

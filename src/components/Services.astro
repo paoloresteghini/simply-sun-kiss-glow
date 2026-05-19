@@ -1,0 +1,117 @@
+---
+const services = [
+  {
+    n: '01',
+    name: 'Signature Mobile Tan',
+    duration: '30 min',
+    price: '75',
+    desc: 'Our flagship — at your door. Hand-blended airbrush tan calibrated to your undertone, applied in your home with full pop-up setup. Develops in 8 hours.',
+    includes: ['We bring the cabin', 'Custom shade match', 'Full body airbrush', 'Drying powder + aftercare'],
+    image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    n: '02',
+    name: 'Express Rapid Glow',
+    duration: '20 min',
+    price: '90',
+    desc: 'On a deadline? We arrive, you rinse in 1–4 hours. Perfect for last-minute events, hotel stays, and photo shoots.',
+    includes: ['Mobile setup', 'Rapid-develop solution', 'Custom shade', 'Quick-rinse window'],
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    n: '03',
+    name: 'Bridal Glow',
+    duration: '60 min',
+    price: '120',
+    desc: 'Trial run plus your big-day tan, delivered to your home or bridal suite. Consultation, undertone analysis, and a calming pre-tan ritual included.',
+    includes: ['Pre-wedding trial', 'Day-of in-suite session', 'Touch-up kit', 'Priority calendar'],
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85',
+  },
+  {
+    n: '04',
+    name: 'Group & Bridal Parties',
+    duration: 'Custom',
+    price: '65',
+    desc: 'Bachelorettes, bridal parties, girls weekends. We bring the pop-up cabin and full kit to your venue. Per-person pricing for 4+ guests.',
+    includes: ['Travel within 40 mi', 'Group scheduling', 'Bridal party rates', 'Bring the celebration'],
+    image: 'https://images.unsplash.com/photo-1515688594390-b649af70d282?auto=format&fit=crop&w=900&q=85',
+  },
+];
+---
+
+<section id="services" class="relative section-padding py-28 lg:py-40 bg-sand overflow-hidden">
+  <div
+    aria-hidden
+    class="pointer-events-none absolute -top-32 right-0 font-italic-display text-[18vw] lg:text-[14rem] text-linen/60 leading-none select-none"
+  >
+    Services
+  </div>
+
+  <div class="relative">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-20">
+      <div>
+        <p class="eyebrow reveal mb-5">The Menu</p>
+        <h2 class="reveal reveal-delay-1 font-display font-light text-walnut text-[clamp(2.4rem,5.5vw,4.5rem)] leading-[1] tracking-tight balance">
+          Tailored services,<br />
+          <span class="font-italic-display text-bronze">flawless results.</span>
+        </h2>
+      </div>
+      <p class="reveal reveal-delay-2 max-w-md text-walnut/70 lg:text-right">
+        Every service is fully mobile — we arrive with a pop-up cabin, lighting, and the full kit. From a solo Signature tan to a full bridal weekend.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-px bg-bronze/20">
+      {services.map((s, i) => (
+        <article
+          class="group relative bg-cream p-8 md:p-12 transition-all duration-700 hover:bg-linen reveal"
+          style={`transition-delay: ${i * 80}ms`}
+        >
+          <div class="grid grid-cols-12 gap-6">
+            <div class="col-span-12 md:col-span-5">
+              <div class="overflow-hidden h-56 md:h-72">
+                <img
+                  src={s.image}
+                  alt={`${s.name} service detail`}
+                  width="600"
+                  height="800"
+                  loading="lazy"
+                  class="h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-110"
+                />
+              </div>
+            </div>
+            <div class="col-span-12 md:col-span-7 flex flex-col">
+              <div class="flex items-baseline justify-between gap-4 mb-3">
+                <span class="font-italic-display text-bronze text-2xl">{s.n}</span>
+                <span class="eyebrow text-walnut/50">{s.duration}</span>
+              </div>
+              <h3 class="font-display text-walnut text-2xl md:text-3xl leading-tight">{s.name}</h3>
+              <p class="mt-3 text-walnut/70 text-sm leading-relaxed">{s.desc}</p>
+
+              <ul class="mt-5 space-y-1.5">
+                {s.includes.map((it) => (
+                  <li class="text-sm text-walnut/65 flex items-center gap-2">
+                    <span class="text-bronze">+</span> {it}
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-6 pt-5 border-t border-bronze/20 flex items-end justify-between">
+                <div>
+                  <div class="eyebrow text-walnut/50">From</div>
+                  <div class="font-display text-3xl text-walnut leading-none mt-1">${s.price}</div>
+                </div>
+                <a
+                  href="#contact"
+                  class="inline-flex items-center gap-2 text-xs uppercase tracking-extra-wide text-walnut group-hover:text-bronze transition-colors"
+                >
+                  Book <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

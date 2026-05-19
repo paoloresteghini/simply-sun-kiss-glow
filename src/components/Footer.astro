@@ -1,0 +1,75 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="relative bg-espresso text-cream/80 overflow-hidden">
+  <!-- Giant outlined wordmark -->
+  <div aria-hidden class="absolute inset-x-0 -bottom-6 lg:-bottom-12 pointer-events-none select-none">
+    <div class="font-display font-light text-[20vw] lg:text-[16rem] leading-none text-transparent text-center" style="-webkit-text-stroke: 1px rgba(201,165,124,0.25);">
+      Sun Kiss <span class="font-italic-display">Glow</span>
+    </div>
+  </div>
+
+  <div class="relative section-padding pt-20 pb-40 grid grid-cols-12 gap-10">
+    <div class="col-span-12 lg:col-span-5">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-tan/60">
+          <svg viewBox="0 0 32 32" class="h-5 w-5 text-tan" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="16" cy="16" r="5" />
+            <g stroke-linecap="round">
+              <line x1="16" y1="3" x2="16" y2="7" /><line x1="16" y1="25" x2="16" y2="29" />
+              <line x1="3" y1="16" x2="7" y2="16" /><line x1="25" y1="16" x2="29" y2="16" />
+              <line x1="6.5" y1="6.5" x2="9.5" y2="9.5" /><line x1="22.5" y1="22.5" x2="25.5" y2="25.5" />
+              <line x1="6.5" y1="25.5" x2="9.5" y2="22.5" /><line x1="22.5" y1="9.5" x2="25.5" y2="6.5" />
+            </g>
+          </svg>
+        </span>
+        <span class="font-display text-xl text-cream">
+          Simply Sun Kiss <span class="font-italic-display text-tan">Glow</span>
+        </span>
+      </div>
+      <p class="text-cream/65 max-w-sm leading-relaxed">
+        Mobile luxury spray tans across greater Miami. We bring the studio to your door — hand-blended, vegan, hand-applied.
+      </p>
+      <p class="mt-4 inline-flex items-center gap-2 text-tan/90 text-xs uppercase tracking-extra-wide">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-7-7.5-7-13a7 7 0 1114 0c0 5.5-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        100% Mobile · We Come To You
+      </p>
+    </div>
+
+    <div class="col-span-6 lg:col-span-2">
+      <h4 class="eyebrow text-tan mb-5">Explore</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#about" class="hover:text-tan transition-colors">About</a></li>
+        <li><a href="#services" class="hover:text-tan transition-colors">Services</a></li>
+        <li><a href="#gallery" class="hover:text-tan transition-colors">Gallery</a></li>
+        <li><a href="#faq" class="hover:text-tan transition-colors">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="col-span-6 lg:col-span-2">
+      <h4 class="eyebrow text-tan mb-5">Care</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#prep" class="hover:text-tan transition-colors">Prep</a></li>
+        <li><a href="#aftercare" class="hover:text-tan transition-colors">Aftercare</a></li>
+        <li><a href="#contact" class="hover:text-tan transition-colors">Book</a></li>
+      </ul>
+    </div>
+
+    <div class="col-span-12 lg:col-span-3">
+      <h4 class="eyebrow text-tan mb-5">Connect</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="https://www.instagram.com/simplysunkissglow/" target="_blank" rel="noopener" class="hover:text-tan transition-colors">Instagram · @simplysunkissglow</a></li>
+        <li><a href="mailto:hello@simplysunkissglow.com" class="hover:text-tan transition-colors">hello@simplysunkissglow.com</a></li>
+        <li><a href="tel:+15550101024" class="hover:text-tan transition-colors">+1 (555) 010-1024</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="relative border-t border-cream/10">
+    <div class="section-padding py-6 flex flex-col md:flex-row gap-4 items-center justify-between text-xs text-cream/50">
+      <p>© {year} Simply Sun Kiss Glow. All rights reserved.</p>
+      <p class="font-italic-display text-tan/70">keep your glow ♡</p>
+    </div>
+  </div>
+</footer>

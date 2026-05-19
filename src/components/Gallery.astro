@@ -1,0 +1,79 @@
+---
+const images = [
+  { src: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=85', alt: 'Sun-kissed shoulders against warm linen', span: 'row-span-2' },
+  { src: 'https://images.unsplash.com/photo-1556228841-a3c527ebefe5?auto=format&fit=crop&w=900&q=85', alt: 'Apothecary tan products flat lay', span: '' },
+  { src: 'https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?auto=format&fit=crop&w=900&q=85', alt: 'Bronzed legs in morning light', span: '' },
+  { src: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85', alt: 'Spray tan kit on warm muslin', span: 'row-span-2' },
+  { src: 'https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?auto=format&fit=crop&w=900&q=85', alt: 'Bronze portrait detail', span: '' },
+  { src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=85', alt: 'Glowing back in golden hour', span: '' },
+];
+
+const testimonials = [
+  { quote: 'The most natural-looking tan I have ever had. People asked where I vacationed.', name: 'Camila R.', tag: 'Bridal client' },
+  { quote: 'Stopped going anywhere else. The custom blend is a different category entirely.', name: 'Ashley M.', tag: 'Weekly regular' },
+  { quote: 'Did our entire bridal party in her studio. Flawless, every shade matched.', name: 'Emily K.', tag: 'Maid of Honor' },
+];
+---
+
+<section id="gallery" class="relative section-padding py-28 lg:py-40 bg-cream overflow-hidden">
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+    <div>
+      <p class="eyebrow reveal mb-5">The Gallery</p>
+      <h2 class="reveal reveal-delay-1 font-display font-light text-walnut text-[clamp(2.4rem,5.5vw,4.5rem)] leading-[1] tracking-tight balance">
+        Moments of<br />
+        <span class="font-italic-display text-bronze">honeyed light.</span>
+      </h2>
+    </div>
+    <a
+      href="https://www.instagram.com/simplysunkissglow/"
+      target="_blank"
+      rel="noopener"
+      class="reveal reveal-delay-2 group flex items-center gap-3 text-walnut hover:text-bronze transition-colors"
+    >
+      <span class="eyebrow">Follow on Instagram</span>
+      <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 auto-rows-[180px] md:auto-rows-[240px]">
+    {images.map((img, i) => (
+      <figure class={`relative overflow-hidden group reveal ${img.span}`} style={`transition-delay: ${i * 70}ms`}>
+        <img
+          src={img.src}
+          alt={img.alt}
+          width="900"
+          height="1200"
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-110"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-walnut/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute bottom-3 left-3 right-3 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="text-xs uppercase tracking-extra-wide text-cream">@simplysunkissglow</span>
+        </div>
+      </figure>
+    ))}
+  </div>
+
+  <!-- Testimonials -->
+  <div class="mt-28 lg:mt-40">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <p class="eyebrow reveal mb-5">Kind Words</p>
+      <h3 class="reveal reveal-delay-1 font-display font-light text-walnut text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] balance">
+        Loved by <span class="font-italic-display text-bronze">2,400+</span> glowing humans.
+      </h3>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-px bg-bronze/25">
+      {testimonials.map((t, i) => (
+        <blockquote class="bg-cream p-8 md:p-10 reveal" style={`transition-delay: ${i * 100}ms`}>
+          <div class="font-italic-display text-5xl text-bronze leading-none mb-4">"</div>
+          <p class="font-display text-walnut text-lg md:text-xl leading-snug balance">{t.quote}</p>
+          <footer class="mt-6 pt-5 border-t border-bronze/20">
+            <div class="font-display text-walnut">{t.name}</div>
+            <div class="eyebrow text-bronze mt-1">{t.tag}</div>
+          </footer>
+        </blockquote>
+      ))}
+    </div>
+  </div>
+</section>
