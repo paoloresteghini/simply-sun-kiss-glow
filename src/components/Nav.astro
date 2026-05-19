@@ -16,7 +16,7 @@ const links = [
 >
   <a href="#top" class="group flex items-center gap-3" aria-label="Simply Sun Kiss Glow home">
     <span class="relative inline-flex h-11 w-11 items-center justify-center rounded-full overflow-hidden border border-bronze/40 bg-cream shadow-sm transition-transform duration-500 group-hover:scale-105">
-      <img src="/images/logo.jpg" alt="Simply Sun Kiss Glow logo" width="44" height="44" class="h-full w-full object-cover" />
+      <img src={`${import.meta.env.BASE_URL}images/logo.jpg`.replace(/\/+/g, '/')} alt="Simply Sun Kiss Glow logo" width="44" height="44" class="h-full w-full object-cover" />
     </span>
     <span class="flex flex-col leading-none">
       <span class="font-display text-[15px] tracking-wide text-walnut">Simply Sun Kiss</span>
