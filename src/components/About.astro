@@ -1,5 +1,6 @@
 ---
-const portrait = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85';
+const base = import.meta.env.BASE_URL;
+const portrait = `${base}/images/gil.png`.replace(/\/+/g, '/');
 const detail = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=85';
 ---
 
